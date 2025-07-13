@@ -1,0 +1,26 @@
+﻿@model Library.Models.Shelf
+
+<h2>Shelf Details</h2>
+
+<div>
+    <strong>ID:</strong> @Model.Id<br />
+    <strong>Name:</strong> @Model.Name
+</div>
+
+@if (Model.Books != null && Model.Books.Any())
+{
+    <h4>Books on this shelf:</h4>
+    <ul>
+        @foreach (var book in Model.Books)
+        {
+            <li>@book.Title</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No books are assigned to this shelf.</p>
+}
+
+<a asp-action="Details" asp-route-id="@Model.Id">Edit</a> |
+<a asp-action="Index">Back to List</a>

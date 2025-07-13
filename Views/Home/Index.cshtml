@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Library.Models.Shelf> 
+
+@{
+    ViewBag.Title = "Library Shelfes";
+}
+<h2 text-align: center;>Library Shelfes</h2>
+
+<p>
+    <a asp-controller="Shelfes" asp-action="CreateShelf" class="btn btn-primary">Add New Shelf</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Shelf Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shelf in Model)   
+    {
+        <tr>
+            <td>
+                    <a asp-controller="Books" asp-action="Index">@shelf.Name</a>
+
+            </td>
+            <td>
+                    <a asp-controller="Shelfes" asp-action="UpDateShelf" asp-route-id="@shelf.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-controller="Shelfes" asp-action="DeleteShelf" asp-route-id="@shelf.Id" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Shelf>
+
+<h2>Library Shelfes</h2>
+<table class="table mt-1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shelf in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Books" asp-action="Index" asp-route-shelfId="@shelf.Id</a>
+                </td>
+                <td>
+					<a asp-controller="Shelfes" asp-action="UpDateShelf" asp-route-id="@shelf.Id" class="btn btn-sm btn-warning">Edit</a>
+					<a asp-controller="Shelfes" asp-action="DeleteShelf" asp-route-id="@shelf.Id" class="btn btn-sm btn-danger">Delete</a>
+					<a asp-controller="Shelfes" asp-action="Details" asp-route-id="@shelf.Id" class="btn btn-sm btn-info">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
