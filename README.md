@@ -33,7 +33,4 @@ This project is a Library Management System built with Blazor and ASP.NET Core (
 - The application uses forms with validation to ensure correct data entry.
 - Modal dialogs are used for confirming delete actions, improving user experience.
 
-# Getting Started
-
-1. **Clone the repository:**
    
